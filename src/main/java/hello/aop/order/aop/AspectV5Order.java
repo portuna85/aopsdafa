@@ -11,7 +11,7 @@ public class AspectV5Order {
 
     @Aspect
     @Order(2)
-    public static class LogAspect{
+    public static class LogAspect {
         @Around("hello.aop.order.aop.Pointcuts.allOrder()")
         public Object doLog(ProceedingJoinPoint jointPoint) throws Throwable {
             log.info("[log] {}", jointPoint.getSignature());
@@ -21,7 +21,7 @@ public class AspectV5Order {
 
     @Aspect
     @Order(1)
-    public static class TxAspect{
+    public static class TxAspect {
         @Around("hello.aop.order.aop.Pointcuts.orderAndService()")
         public Object doTransaction(ProceedingJoinPoint joinPoint) throws Throwable {
             try {
